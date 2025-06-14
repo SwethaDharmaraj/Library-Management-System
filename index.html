@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management</title>
+    <style>
+        /* General Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            background: url("{{ url_for('static', filename='image copy.png') }}") no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar */
+        .navbar-container {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .navbar-container h2 {
+            margin: 0;
+            padding-left: 30px;
+            font-size: 1.8rem;
+            color: gold;
+        }
+
+        .nav-links {
+            padding-right: 30px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            margin: 5px;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Welcome Section */
+        /* Welcome Section - Added More Space Below Navbar */
+/* Welcome Section - Added Even More Space Below Navbar */
+/* Welcome Section - More Space Below Navbar */
+.welcome-message {
+    margin-top: 100px; /* Increased top spacing for better separation */
+    margin-bottom: 50px; /* Keeps good space before motivation section */
+    background: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+    width: 60%;
+}
+
+
+
+
+        /* Motivation Section */
+        .motivation-section {
+            margin-bottom: 60px; /* More space before User Reviews */
+            padding: 30px;
+            width: 80%;
+            max-width: 800px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* User Reviews */
+        .reviews-section {
+            width: 80%;
+            text-align: center;
+        }
+
+        .reviews-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .review-card {
+            background: rgba(255, 255, 255, 0.9);
+            color: black;
+            padding: 20px;
+            border-radius: 15px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+            border: 3px solid pink;
+        }
+
+        .review-card:hover {
+            transform: scale(1.05);
+        }
+
+        .review-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 2px solid gold;
+        }
+
+        .review-author {
+            font-weight: bold;
+            margin-top: 10px;
+            color: darkred;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar-container">
+        <h2>Library Management</h2>
+        <div class="nav-links">
+            <a href="{{ url_for('login') }}" class="btn">Login</a>
+            <a href="{{ url_for('signup') }}" class="btn">Signup</a>
+        </div>
+    </div>
+
+    <!-- Welcome Section -->
+    <div class="welcome-message">
+        <h2>Welcome to the Library Management System</h2>
+        <p>Discover a world of knowledge with our extensive collection of books. Join us to manage, borrow, and explore amazing reads!</p>
+    </div>
+
+    <!-- Motivation Section -->
+    <div class="motivation-section">
+        <h2 style="color: gold;">Why Read Books?</h2>
+        <p>Books open the doors to new worlds, ideas, and opportunities. Reading enhances knowledge, improves focus, and inspires creativity. A library is not just a place for books, but a gateway to lifelong learning!</p>
+    </div>
+
+    <!-- User Reviews Section -->
+
+        <h2 style="color: gold;">User Reviews</h2>
+        
+        <h5>See what our members have to say about their experience!</h5>
+        <br>
+        <br>
+        <div class="reviews-container">
+            <div class="review-card">
+                <img src="{{ url_for('static', filename='image copy 2.png') }}" alt="User 1">
+                <p>"This library system makes borrowing books so easy! Love the smooth interface."</p>
+                <p class="review-author">- John Doe</p>
+            </div>
+            <div class="review-card">
+                <img src="{{ url_for('static', filename='image copy 3.png') }}" alt="User 2">
+                <p>"A game-changer for book lovers! The best digital library experience ever."</p>
+                <p class="review-author">- Sarah Smith</p>
+            </div>
+            <div class="review-card">
+                <img src="{{ url_for('static', filename='image copy 4.png') }}" alt="User 3">
+                <p>"I found rare books that I couldn't get elsewhere. Highly recommend!"</p>
+                <p class="review-author">- Michael Brown</p>
+            </div>
+            <div class="review-card">
+                <img src="{{ url_for('static', filename='image copy 5.png') }}" alt="User 4">
+                <p>"User-friendly and very efficient. Managing books has never been this simple!"</p>
+                <p class="review-author">- Emily Johnson</p>
+            </div>
+            <div class="review-card">
+                <img src="{{ url_for('static', filename='image copy 6.png') }}" alt="User 5">
+                <p>"Borrowing and returning books is super fast. A must-have for every reader."</p>
+                <p class="review-author">- David Lee</p>
+            </div>
+        </div>
+    
+
+</body>
+</html>
